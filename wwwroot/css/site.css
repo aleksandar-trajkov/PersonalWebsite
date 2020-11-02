@@ -154,6 +154,16 @@ a {
           border-right: 12px solid #2e2e2e;
           left: -12px; } }
 
+.cv-download-button {
+  color: #ffbc38;
+  border: 2px solid #ffbc38;
+  margin-right: 5%; }
+  .cv-download-button:hover, .cv-download-button:active {
+    color: #ffcd6b; }
+  @media screen and (min-width: 992px) {
+    .cv-download-button {
+      margin-right: 2%; } }
+
 @media screen and (max-width: 1280px) {
   h2 {
     left: -3rem; } }
