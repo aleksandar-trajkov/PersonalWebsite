@@ -1,0 +1,27 @@
+﻿.personal-info {
+    .container-fluid {
+        padding:0;
+    }
+    .photo-frame {
+        width: 120px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .personal-details {
+        font-size: .9rem;
+    }
+
+    .personal-details-section {
+        color: #fff;
+        display: inline-block;
+        width: 8rem;
+        font-weight: bold;
+    }
+}
+
+.personal-description {
+    font-size: .9rem;
+}

@@ -1,0 +1,83 @@
+﻿@using PersonalWebsite.Models;
+@{ 
+    var experiences = new List<ExperienceModel>
+    {
+        new ExperienceModel
+        {
+            CompanyName = "Allocate Software",
+            Logo = "allocate-software.jpg",
+            Position = "Senior Software Engineer",
+            From = new DateTime(2016, 3, 15),
+            To = null,
+            Responsibilities = new List<string>
+            {
+                "Participation with sprint planning",
+                "Research of new technologies and their implementation within the existing codebase",
+                "Task estimation",
+                "Full stack development",
+                "Chapter lead",
+                "Front-end architecture implementation"
+            },
+            Direction = Direction.Left
+        },
+        new ExperienceModel
+        {
+            CompanyName = "InScale",
+            Logo = "inScale.jpg",
+            Position = "Senior .NET developer",
+            From = new DateTime(2015, 4, 1),
+            To = new DateTime(2016, 3, 15),
+            Responsibilities = new List<string>
+            {
+                "Participation in sprint planning",
+                "Implementation of new features in the software",
+                "Improvement of existing functionalities",
+                "Full stack development"
+            },
+            Direction = Direction.Right
+        },
+        new ExperienceModel
+        {
+            CompanyName = "Matrix Global",
+            Logo = "matrix-global.jpg",
+            Position = "Web Developer",
+            From = new DateTime(2014, 5, 1),
+            To = new DateTime(2015, 4, 1),
+            Responsibilities = new List<string>
+            {
+                "Front-end development",
+                "Integration testing with Selenium",
+                "Planning, implementing and testing requested features",
+                "Agile / Scrum work methodologies"
+            },
+            Direction = Direction.Left
+        },
+        new ExperienceModel
+        {
+            CompanyName = "Artistika Dizajn",
+            Logo = "artistika.jpg",
+            Position = "Web Developer / Lead Developer",
+            From = new DateTime(2011, 10, 24),
+            To = new DateTime(2014, 5, 1),
+            Responsibilities = new List<string>
+            {
+                "Planning, estimation and development of features in software solutions",
+                "Planning and development of new software solutions",
+                "Active maintenance of ongoing projects",
+                "Deployment of web projects to several hosting environments"
+            },
+            Direction = Direction.Right
+        }
+    };
+}
+
+<h2 class="experience">Experience</h2>
+<div class="clearfix"></div>
+<h4>Work experience</h4>
+<div class="timeline">
+<div class="timeline-line"></div>
+    @foreach(var experience in experiences)
+    {
+        @Html.Partial("Partials/_SingleExperience", experience)
+    }
+</div>

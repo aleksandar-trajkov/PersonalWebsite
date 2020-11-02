@@ -1,0 +1,29 @@
+﻿@using PersonalWebsite.Models
+@model ExperienceModel;
+
+<div class="timeline-entry-outer">
+    <div class="timeline-dot"></div>
+    <div class="timeline-entry @(Model.Direction == Direction.Left ? "left" : "right")">
+        <div class="timeline-arrow"></div>
+        <div class="timeline-title">
+            <div class="photo-frame mr-2">
+                <img src="~/images//logos/@Model.Logo" />
+            </div>
+            <div class="timeline-title-text">
+                @Model.CompanyName
+            </div>
+        </div>
+        <div class="timeline-position mt-1">
+            @Model.Position
+        </div>
+        <div class="timeline-time mt-1">
+            @Model.From.ToString("MMMM dd, yyyy") - @(Model.To.HasValue ? Model.To.Value.ToString("MMMM dd, yyyy") : "ongoing")
+        </div>
+        <ul class="timeline-details mt-2">
+            @foreach (var responsibility in Model.Responsibilities)
+            {
+                <li>@responsibility</li>
+            }
+        </ul>
+    </div>
+</div>

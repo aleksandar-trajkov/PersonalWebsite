@@ -1,0 +1,113 @@
+﻿@import '../Base/_variables.scss';
+.timeline {
+    position: relative;
+
+    .timeline-line {
+        position: absolute;
+        left: calc(5% - 2px);
+        width: 4px;
+        height: 100%;
+        background: $yellow;
+        border-radius: 2px;
+    }
+
+    .timeline-entry-outer {
+        position: relative;
+    }
+
+    .timeline-dot {
+        width: 24px;
+        height: 24px;
+        border-radius: 12px;
+        background: darken($yellow, 15);
+        position: absolute;
+        left: calc(5% - 13px);
+        border: 2px solid $yellow;
+        top: 1rem;
+    }
+
+    .timeline-entry {
+        max-width: calc(90% - 30px);
+        padding: .5rem 1rem;
+        background: lighten(#141414, 10);
+        position: relative;
+        margin-bottom:1rem;
+
+        .photo-frame {
+            width: 40px;
+            background: lighten(#141414,20);
+        }
+
+        &.left, &.right {
+            left: calc(5% + 30px);
+
+            .timeline-arrow {
+                border-top: 12px solid transparent;
+                border-bottom: 12px solid transparent;
+                border-right: 12px solid lighten(#141414, 10);
+                left: -12px;
+            }
+        }
+    }
+
+    .timeline-title-text {
+        line-height: 40px;
+    }
+
+    .timeline-position {
+        font-size: 0.8rem;
+    }
+
+    .timeline-time {
+        font-size: 0.8rem;
+    }
+
+    .timeline-details {
+        padding-left: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .timeline-arrow {
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 1rem;
+    }
+
+    @media screen and (min-width:992px) {
+        .timeline-line {
+            left: calc(50% - 2px);
+        }
+
+        .timeline-dot {
+            left: calc(50% - 13px);
+        }
+
+        .timeline-entry {
+            max-width: 45%;
+
+            &.left {
+                left: calc(5% - 30px);
+
+                .timeline-arrow {
+                    border-right:0;
+                    border-top: 12px solid transparent;
+                    border-bottom: 12px solid transparent;
+                    border-left: 12px solid lighten(#141414, 10);
+                    left: 100%;
+                }
+            }
+
+            &.right {
+                left: calc(50% + 30px);
+
+                .timeline-arrow {
+                    border-top: 12px solid transparent;
+                    border-bottom: 12px solid transparent;
+                    border-right: 12px solid lighten(#141414, 10);
+                    left: -12px;
+                }
+            }
+        }
+    }
+}

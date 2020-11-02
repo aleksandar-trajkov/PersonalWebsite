@@ -1,0 +1,38 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<canvas id="backgroundCanvas"></canvas>
+<div class="main-wrapper">
+    <main class="container-fluid">
+        <section class="row info">
+            <div class="col">
+                @Html.Partial("Partials/_Profile")
+            </div>
+        </section>
+        <section class="row info">
+            <div class="col">
+                @Html.Partial("Partials/_Experience")
+            </div>
+        </section>
+        <section class="row info">
+            <div class="col">
+                @Html.Partial("Partials/_Skills")
+            </div>
+        </section>
+        <section class="row info no-border">
+            <div class="col">
+                @Html.Partial("Partials/_Contact")
+            </div>
+        </section>
+        <section class="row mt-3">
+            <div class="col">
+                @Html.Partial("Partials/_Social")
+            </div>
+        </section>
+    </main>
+</div>
+@section Scripts {
+    <script src="~/js/site.js"></script>
+}
