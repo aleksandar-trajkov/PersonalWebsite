@@ -1,1 +1,102 @@
-﻿<h2 class="skills">Skills</h2>
+﻿@using PersonalWebsite.Models;
+@{
+    var skills = new List<SkillModel>
+    {
+        new SkillModel {Name = "C#", Value = 85},
+        new SkillModel {Name = "SQL", Value = 80},
+        new SkillModel {Name = "ASP.Net Core", Value = 60},
+        new SkillModel {Name = "JavaScript", Value = 80},
+        new SkillModel {Name = "ReactJS", Value = 85},
+        new SkillModel {Name = "Entity Framework", Value = 50},
+        new SkillModel {Name = "HTML", Value = 90},
+        new SkillModel {Name = "CSS", Value = 90}
+    };
+    var educations = new List<ExperienceModel>
+    {
+        new ExperienceModel
+        {
+            CompanyName = "University of St. Cyril and Methodius, Skopje",
+            Position = "Bachelor's degree, Internet and Mobile Technologies",
+            Logo = "ukim.jpg",
+            From = new DateTime(2007, 10, 1),
+            To = new DateTime(2011, 12, 26)
+        },
+        new ExperienceModel
+        {
+            CompanyName = "Microsoft",
+            Position = "MCSD: Web Applications",
+            Logo = "microsoft.jpg",
+            From = new DateTime(2017, 2, 1),
+            To = new DateTime(2019, 2, 26)
+        },
+    };
+    var languages = new List<SkillModel>
+    {
+        new SkillModel {Name = "English", Value = 5},
+        new SkillModel {Name = "Macedonian", Value = 5},
+        new SkillModel {Name = "Spanish", Value = 1}
+    };
+}
+<h2 class="skills">
+    <span class="icon-skills"></span>
+    Skills
+</h2>
+<div class="clearfix"></div>
+<h4>Technologies</h4>
+<div class="container-fluid skills mb-3">
+    <div class="row">
+        @foreach (var skill in skills)
+        {
+            <div class="col-12 col-md-6 col-lg-3 mb-2">
+                @skill.Name
+                <div class="progress-bar-outer">
+                    <div class="progress-bar-inner" style="width:@(skill.Value)%">
+                        <span class="progress-bar-text float-right mr-2">@skill.Value%</span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<h4>Education</h4>
+<div class="container-fluid skills mb-3">
+    <div class="row">
+        @foreach (var education in educations)
+        {
+        <div class="col-12 col-md-6">
+            <div class="photo-frame mr-2">
+                <img src="~/images//logos/@education.Logo" />
+            </div>
+            <div class="education-text float-left">
+                <div class="">
+                    @education.Position
+                </div>
+                <div class="small-text mt-1">
+                    @education.CompanyName
+                </div>
+                <div class="small-text">
+                    @education.From.ToString("MMMM dd, yyyy") - @(education.To.HasValue ? education.To.Value.ToString("MMMM dd, yyyy") : "ongoing")
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+<h4>Languages</h4>
+<div class="container-fluid skills mb-3">
+    <div class="row">
+        @foreach (var language in languages)
+        {
+            <div class="col-12 col-lg-4 mb-2">
+                @language.Name
+                <div class="progress-bar-outer">
+                    <div class="progress-bar-inner" style="width:@(language.Value * 20)%">
+                        <span class="progress-bar-text float-right mr-2">&nbsp;</span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

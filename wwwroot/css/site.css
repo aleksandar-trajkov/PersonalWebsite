@@ -10,7 +10,7 @@ body {
   background: #000; }
 
 .info {
-  background: #141414;
+  background: #0b0b0b;
   padding: 1rem 2rem;
   border-bottom: 1px solid #323232; }
   .info.no-border {
@@ -21,21 +21,27 @@ h1 {
 
 h2 {
   float: left;
-  padding: 1rem 2rem 1rem 5rem;
+  padding: 1rem 2rem 1rem 1rem;
   left: -5rem;
   top: calc(-1rem - 1px);
   position: relative;
   color: #fff;
   min-width: 20rem;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  border-radius: 1px; }
+  h2 [class^="icon-"], h2 [class*=" icon-"] {
+    font-size: 2.4rem;
+    line-height: 2rem;
+    vertical-align: -7px;
+    margin-right: 1rem; }
   h2.profile {
-    background: #4ca5d0; }
+    background: #3a66e6; }
   h2.experience {
     background: #ffbc38; }
   h2.skills {
     background: #6ca338; }
   h2.contact {
-    background: #e82c0c; }
+    background: #ff754a; }
 
 h4 {
   font-size: 1.3rem; }
@@ -60,6 +66,54 @@ a {
   height: 100%;
   z-index: -1;
   opacity: 0.1; }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?n0zt6j");
+  src: url("../fonts/icomoon.eot?n0zt6j#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?n0zt6j") format("truetype"), url("../fonts/icomoon.woff?n0zt6j") format("woff"), url("../fonts/icomoon.svg?n0zt6j#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-skills:before {
+  content: "\e920"; }
+
+.icon-experience:before {
+  content: "\e92e"; }
+
+.icon-contact:before {
+  content: "\e900"; }
+
+.icon-profile:before {
+  content: "\e976"; }
+
+.icon-facebook:before {
+  content: "\ea91"; }
+
+.icon-instagram:before {
+  content: "\ea92"; }
+
+.icon-github:before {
+  content: "\eab0"; }
+
+.icon-linkedin:before {
+  content: "\eac9"; }
+
+.icon-stackoverflow:before {
+  content: "\ead0"; }
 
 .personal-info .container-fluid {
   padding: 0; }
@@ -163,6 +217,54 @@ a {
   @media screen and (min-width: 992px) {
     .cv-download-button {
       margin-right: 2%; } }
+
+.skills .progress-bar-outer {
+  width: 100%;
+  background: #2e2e2e;
+  border-radius: 1px;
+  overflow: hidden; }
+
+.skills .progress-bar-inner {
+  background: #6ca338;
+  color: #fff; }
+
+.skills .progress-bar-text {
+  font-size: 0.8rem;
+  color: #ccc;
+  line-height: 1.3rem; }
+
+.skills .photo-frame {
+  width: 40px; }
+
+.skills .education-text {
+  width: calc(100% - .5rem - 40px); }
+  .skills .education-text .small-text {
+    font-size: 0.8rem; }
+
+.contact input, .contact textarea, .contact button {
+  border-radius: 1px;
+  outline: none;
+  border: 2px solid #ff754a;
+  color: #fff;
+  background: #323232; }
+  .contact input.form-control:focus, .contact textarea.form-control:focus, .contact button.form-control:focus {
+    outline: none;
+    border: 2px solid #ff754a;
+    color: #fff;
+    background: #323232;
+    box-shadow: 0 0 0 0.2rem rgba(255, 117, 74, 0.2); }
+
+.contact button {
+  color: #ff754a;
+  background: transparent;
+  font-weight: bold; }
+
+.social a, .social a:visited {
+  color: #cecece;
+  margin-left: .5rem;
+  font-size: 1.2rem; }
+  .social a:hover, .social a:visited:hover {
+    color: #fff; }
 
 @media screen and (max-width: 1280px) {
   h2 {

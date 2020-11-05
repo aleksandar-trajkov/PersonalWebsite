@@ -11,7 +11,7 @@ body {
     background:#000;
 }
 .info {
-    background: #141414;
+    background: #0b0b0b;
     padding: 1rem 2rem;
     border-bottom: 1px solid #323232;
 
@@ -24,28 +24,36 @@ h1 {
 }
 h2 {
     float: left;
-    padding: 1rem 2rem 1rem 5rem;
+    padding: 1rem 2rem 1rem 1rem;
     left: -5rem;
     top: calc(-1rem - 1px);
     position: relative;
     color: #fff;
     min-width:20rem;
     font-size:1.5rem;
+    border-radius:1px;
+
+    [class^="icon-"], [class*=" icon-"] {
+        font-size:2.4rem;
+        line-height:2rem;
+        vertical-align:-7px;
+        margin-right:1rem;
+    }
 
     &.profile {
-        background: #4ca5d0;
+        background: $blue;
     }
 
     &.experience {
-        background: #ffbc38;
+        background: $yellow;
     }
 
     &.skills {
-        background: #6ca338;
+        background: $green;
     }
 
     &.contact {
-        background: #e82c0c;
+        background: $orange;
     }
 }
 h4 {
@@ -76,8 +84,13 @@ a {
     opacity:0.1;
 }
 
+@import "Base/_icons.scss";
+
 @import "Sections/_profile.scss";
 @import "Sections/_experience.scss";
+@import "Sections/_skills.scss";
+@import "Sections/_contact.scss";
+@import "Sections/_social.scss";
 
 @media screen and (max-width: 1280px) {
     h2 {

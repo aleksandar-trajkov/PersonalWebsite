@@ -1,0 +1,32 @@
+﻿@import '../Base/_variables.scss';
+.skills {
+    .progress-bar-outer {
+        width: 100%;
+        background: lighten(#141414, 10);
+        border-radius: 1px;
+        overflow:hidden;
+    }
+
+    .progress-bar-inner {
+        background: $green;
+        color: #fff;
+    }
+
+    .progress-bar-text {
+        font-size: 0.8rem;
+        color: #ccc;
+        line-height:1.3rem;
+    }
+
+    .photo-frame {
+        width: 40px;
+    }
+
+    .education-text {
+        width: calc(100% - .5rem - 40px);
+
+        .small-text {
+            font-size: 0.8rem;
+        }
+    }
+}
