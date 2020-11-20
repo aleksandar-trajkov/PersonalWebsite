@@ -45,3 +45,79 @@ function canvasApp() {
 	runMatrix();
 
 }
+
+$(document).ready(function () {
+	var name = $("#name");
+	var email = $("#email");
+	var message = $("#message");
+	var notificationWell = $(".notification-well");
+	var notificationTemplate = $(".notification-template");
+	var opened = new Date();
+	$('#send-email').click(function (e) {
+		e.preventDefault();
+		var errors = validate();
+		if ((new Date() - opened) / 1000 < 10) {
+			return;
+        }
+		if (errors.length > 0) {
+			showMessages(errors, true);
+			return;
+        }
+
+		$.ajax({
+			url: "/api/Email",
+			method: "POST",
+			contentType: "application/json",
+			data: JSON.stringify({ Name: name.val(), Email: email.val(), Message: message.val() }),
+			success: function (isSuccess) {
+				if (isSuccess) {
+					showMessages(["Contact message sent successfully"], false);
+				} else {
+					showMessages(["An unexpected error occured, please try again later"], true);
+                }
+			},
+			error: function () {
+				showMessages(["An unexpected error occured, please try again later"], true);
+            }
+		});
+	})
+	function validate() {
+		var errors = [];
+		if (name.val() == '') {
+			errors.push("Contact name is required")
+		}
+		if (email.val() == '') {
+			errors.push("Contact email is required")
+		}
+		else if (!(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(email.val()))) {
+			errors.push("Please enter a valid email address")
+        }
+		if (message.val() == '') {
+			errors.push("Message is required")
+		}
+
+		return errors;
+	}
+	function showMessages(messages, isError) {
+		$.each(messages, function (index, message) {
+			var notification = notificationTemplate.html();
+			var key = makeid(15);
+			notification = notification.replace('%key%', key)
+			notification = notification.replace('%type%', isError ? 'error' : 'success')
+			notification = notification.replace('%message%', message)
+			notificationWell.append(notification);
+			setTimeout(function () {
+				notificationWell.find('.notification[data-key=' + key + ']').remove();
+            }, 10*1000) //10s
+        })
+	}
+	function makeid(length) {
+		var result = '';
+		var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		var charactersLength = characters.length;
+		for (var i = 0; i < length; i++) {
+			result += characters.charAt(Math.floor(Math.random() * charactersLength));
+		}
+		return result;
+	}
+});

@@ -19,7 +19,7 @@ namespace PersonalWebsite.Pages
 
         public void OnGet()
         {
-
+            
         }
     }
 }

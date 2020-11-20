@@ -266,6 +266,21 @@ a {
   .social a:hover, .social a:visited:hover {
     color: #fff; }
 
+.notification-well {
+  position: fixed;
+  top: 0rem;
+  right: .5rem; }
+  .notification-well .notification {
+    padding: .5rem 1rem;
+    color: #efefef;
+    margin-top: .5rem;
+    font-size: 0.85rem;
+    border-radius: 1px; }
+    .notification-well .notification.notification-error {
+      background: #e82c0c; }
+    .notification-well .notification.notification-success {
+      background: #6ca338; }
+
 @media screen and (max-width: 1280px) {
   h2 {
     left: -3rem; } }

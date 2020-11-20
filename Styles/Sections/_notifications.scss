@@ -1,0 +1,22 @@
+﻿@import '../Base/_variables.scss';
+.notification-well {
+    position: fixed;
+    top: 0rem;
+    right: .5rem;
+
+    .notification {
+        padding: .5rem 1rem;
+        color: #efefef;
+        margin-top: .5rem;
+        font-size: 0.85rem;
+        border-radius:1px;
+
+        &.notification-error {
+            background: $red;
+        }
+
+        &.notification-success {
+            background: $green;
+        }
+    }
+}
