@@ -74,7 +74,11 @@ $(document).ready(function () {
 					showMessages(["Contact message sent successfully"], false);
 				} else {
 					showMessages(["An unexpected error occured, please try again later"], true);
-                }
+				}
+				name.val('');
+				email.val('');
+				message.val('');
+				opened = new Date()
 			},
 			error: function () {
 				showMessages(["An unexpected error occured, please try again later"], true);
@@ -101,7 +105,7 @@ $(document).ready(function () {
 	function showMessages(messages, isError) {
 		$.each(messages, function (index, message) {
 			var notification = notificationTemplate.html();
-			var key = makeid(15);
+			var key = makeId(15);
 			notification = notification.replace('%key%', key)
 			notification = notification.replace('%type%', isError ? 'error' : 'success')
 			notification = notification.replace('%message%', message)
@@ -111,7 +115,7 @@ $(document).ready(function () {
             }, 10*1000) //10s
         })
 	}
-	function makeid(length) {
+	function makeId(length) {
 		var result = '';
 		var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 		var charactersLength = characters.length;
