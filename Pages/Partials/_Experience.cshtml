@@ -4,11 +4,27 @@
     {
         new ExperienceModel
         {
+            CompanyName = "Endava",
+            Logo = "endava.jpg",
+            Position = "Senior Engineer - Senior Developer",
+            From = new DateTime(2021, 1, 1),
+            To = null,
+            Responsibilities = new List<string>
+            {
+                "Participation with sprint planning",
+                "Task estimation",
+                "Azure ServiceBus",
+                "Azure Functions"
+            },
+            Direction = Direction.Left
+        },
+        new ExperienceModel
+        {
             CompanyName = "Allocate Software",
             Logo = "allocate-software.jpg",
             Position = "Senior Software Engineer",
             From = new DateTime(2016, 3, 15),
-            To = null,
+            To =  new DateTime(2020, 12, 31),
             Responsibilities = new List<string>
             {
                 "Participation with sprint planning",
@@ -18,7 +34,7 @@
                 "Chapter lead",
                 "Front-end architecture implementation"
             },
-            Direction = Direction.Left
+            Direction = Direction.Right
         },
         new ExperienceModel
         {
@@ -34,7 +50,7 @@
                 "Improvement of existing functionalities",
                 "Full stack development"
             },
-            Direction = Direction.Right
+            Direction = Direction.Left
         },
         new ExperienceModel
         {
@@ -50,7 +66,7 @@
                 "Planning, implementing and testing requested features",
                 "Agile / Scrum work methodologies"
             },
-            Direction = Direction.Left
+            Direction = Direction.Right
         },
         new ExperienceModel
         {
@@ -66,7 +82,7 @@
                 "Active maintenance of ongoing projects",
                 "Deployment of web projects to several hosting environments"
             },
-            Direction = Direction.Right
+            Direction = Direction.Left
         }
     };
 }
