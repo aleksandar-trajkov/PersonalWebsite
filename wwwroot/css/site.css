@@ -172,7 +172,8 @@ a {
         border-right: 12px solid #2e2e2e;
         left: -12px; }
   .timeline .timeline-title-text {
-    line-height: 40px; }
+    line-height: 40px;
+    font-weight: bold; }
   .timeline .timeline-position {
     font-size: 0.8rem; }
   .timeline .timeline-time {
