@@ -4,19 +4,36 @@
     {
         new ExperienceModel
         {
+            CompanyName = "Seavus",
+            Logo = "seavus.jpg",
+            Position = "Senior Software Developer",
+            From = new DateTime(2022, 10, 1),
+            Responsibilities = new List<string>
+            {
+                "Participation with sprint planning",
+                "Microservice architecture",
+                "Azure ServiceBus",
+                "Azure Event Hub",
+                "Azure Functions",
+            }
+        },
+        new ExperienceModel
+        {
             CompanyName = "Endava",
             Logo = "endava.jpg",
             Position = "Senior Engineer - Senior Developer",
             From = new DateTime(2021, 1, 1),
-            To = null,
+            To = new DateTime(2022, 4, 30),
             Responsibilities = new List<string>
             {
                 "Participation with sprint planning",
                 "Task estimation",
                 "Azure ServiceBus",
-                "Azure Functions"
-            },
-            Direction = Direction.Left
+                "Azure Functions",
+                "Azure CosmosDb",
+                "Azure Event Hub",
+                "Azure SignalR"
+            }
         },
         new ExperienceModel
         {
@@ -33,8 +50,7 @@
                 "Full stack development",
                 "Chapter lead",
                 "Front-end architecture implementation"
-            },
-            Direction = Direction.Right
+            }
         },
         new ExperienceModel
         {
@@ -49,8 +65,7 @@
                 "Implementation of new features in the software",
                 "Improvement of existing functionalities",
                 "Full stack development"
-            },
-            Direction = Direction.Left
+            }
         },
         new ExperienceModel
         {
@@ -65,8 +80,7 @@
                 "Integration testing with Selenium",
                 "Planning, implementing and testing requested features",
                 "Agile / Scrum work methodologies"
-            },
-            Direction = Direction.Right
+            }
         },
         new ExperienceModel
         {
@@ -81,10 +95,13 @@
                 "Planning and development of new software solutions",
                 "Active maintenance of ongoing projects",
                 "Deployment of web projects to several hosting environments"
-            },
-            Direction = Direction.Left
+            }
         }
     };
+    for(var i = 0; i < experiences.Count; i++)
+    {
+        experiences[i].Direction = i % 2 == 0 ? Direction.Left : Direction.Right;
+    }
 }
 
 <h2 class="experience">
