@@ -1,13 +1,27 @@
 ﻿@using PersonalWebsite.Models;
-@{ 
+@{
     var experiences = new List<ExperienceModel>
     {
+        new ExperienceModel
+        {
+            CompanyName = "MeterGram",
+            Logo = "metergram.jpg",
+            Position = "Senior Software Engineer",
+            From = new DateTime(2023, 10, 1),
+            Responsibilities = new List<string>
+            {
+                "Participation with sprint planning",
+                "Microservice architecture",
+                "OCPP 1.6"
+            }
+        },
         new ExperienceModel
         {
             CompanyName = "Seavus",
             Logo = "seavus.jpg",
             Position = "Senior Software Developer",
             From = new DateTime(2022, 10, 1),
+            To = new DateTime(2023, 9, 30),
             Responsibilities = new List<string>
             {
                 "Participation with sprint planning",

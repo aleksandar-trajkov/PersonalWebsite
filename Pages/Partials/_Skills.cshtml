@@ -2,14 +2,17 @@
 @{
     var skills = new List<SkillModel>
     {
-        new SkillModel {Name = "C#", Value = 85},
-        new SkillModel {Name = "SQL", Value = 80},
-        new SkillModel {Name = "ASP.Net Core", Value = 60},
-        new SkillModel {Name = "JavaScript", Value = 80},
-        new SkillModel {Name = "ReactJS", Value = 65},
-        new SkillModel {Name = "Entity Framework", Value = 50},
-        new SkillModel {Name = "HTML", Value = 90},
-        new SkillModel {Name = "CSS", Value = 90}
+        new SkillModel {Name = "C#"},
+        new SkillModel {Name = "SQL"},
+        new SkillModel {Name = "ASP.Net Core"},
+        new SkillModel {Name = "JavaScript"},
+        new SkillModel {Name = "ReactJs"},
+        new SkillModel {Name = "Entity Framework"},
+        new SkillModel {Name = "HTML"},
+        new SkillModel {Name = "CSS"},
+        new SkillModel {Name = "Azure ServiceBus"},
+        new SkillModel {Name = "Azure Functions"},
+        new SkillModel {Name = "Azure CosmosDb"},
     };
     var educations = new List<ExperienceModel>
     {
@@ -32,9 +35,9 @@
     };
     var languages = new List<SkillModel>
     {
-        new SkillModel {Name = "English", Value = 5},
-        new SkillModel {Name = "Macedonian", Value = 5},
-        new SkillModel {Name = "Spanish", Value = 1}
+        new SkillModel {Name = "Macedonian (native)"},
+        new SkillModel {Name = "English (fluent)"},
+        new SkillModel {Name = "Spanish (basic)"}
     };
 }
 <h2 class="skills">
@@ -49,12 +52,6 @@
         {
             <div class="col-12 col-md-6 col-lg-3 mb-2">
                 @skill.Name
-                <div class="progress-bar-outer">
-                    <div class="progress-bar-inner" style="width:@(skill.Value)%">
-                        <span class="progress-bar-text float-right mr-2">@skill.Value%</span>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
             </div>
         }
     </div>
@@ -90,12 +87,6 @@
         {
             <div class="col-12 col-lg-4 mb-2">
                 @language.Name
-                <div class="progress-bar-outer">
-                    <div class="progress-bar-inner" style="width:@(language.Value * 20)%">
-                        <span class="progress-bar-text float-right mr-2">&nbsp;</span>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
             </div>
         }
     </div>
