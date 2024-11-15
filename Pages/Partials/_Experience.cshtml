@@ -4,6 +4,20 @@
     {
         new ExperienceModel
         {
+          CompanyName = "Personal Programmer",
+          Logo = "personalProgrammer.jpg",
+          Position = "Senior Software Engineer",
+          From = new DateTime(2024, 10, 1),
+          Responsibilities = new List<string>
+          {
+              "Participation with sprint planning",
+              "Microservice architecture",
+              "Azure API Management",
+              "RabbitMQ",
+          }
+        },
+        new ExperienceModel
+        {
             CompanyName = "MeterGram",
             Logo = "metergram.jpg",
             Position = "Senior Software Engineer",
@@ -131,7 +145,7 @@
 <div class="timeline-line"></div>
     @foreach(var experience in experiences)
     {
-        @Html.Partial("Partials/_SingleExperience", experience)
+        @await Html.PartialAsync("Partials/_SingleExperience", experience)
     }
 </div>
 <a class="btn cv-download-button float-right" href="~/files/CV-Europass-Latest-Trajkov-EN.pdf" target="_blank">Download CV</a>

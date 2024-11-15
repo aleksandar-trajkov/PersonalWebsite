@@ -8,32 +8,32 @@
     <main class="container-fluid">
         <section class="row info">
             <div class="col">
-                @Html.Partial("Partials/_Profile")
+                @await Html.PartialAsync("Partials/_Profile")
             </div>
         </section>
         <section class="row info">
             <div class="col">
-                @Html.Partial("Partials/_Experience")
+                @await Html.PartialAsync("Partials/_Experience")
             </div>
         </section>
         <section class="row info">
             <div class="col">
-                @Html.Partial("Partials/_Skills")
+                @await Html.PartialAsync("Partials/_Skills")
             </div>
         </section>
         <section class="row info no-border">
             <div class="col">
-                @Html.Partial("Partials/_Contact")
+                @await Html.PartialAsync("Partials/_Contact")
             </div>
         </section>
         <section class="row mt-3">
             <div class="col">
-                @Html.Partial("Partials/_Social")
+                @await Html.PartialAsync("Partials/_Social")
             </div>
         </section>
     </main>
 </div>
-@Html.Partial("Partials/_Notifications")
+@await Html.PartialAsync("Partials/_Notifications")
 @section Scripts {
     <script src="~/js/site.js"></script>
 }
