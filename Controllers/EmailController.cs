@@ -15,10 +15,10 @@ namespace PersonalWebsite.Controllers
     [ApiController]
     public class EmailController : ControllerBase
     {
-        private readonly IOptions<EmailSettings> config;
+        private readonly EmailSettings config;
         public EmailController(IOptions<EmailSettings> config)
         {
-            this.config = config;
+            this.config = config.Value;
         }
 
         [HttpPost]
@@ -31,29 +31,31 @@ namespace PersonalWebsite.Controllers
 
             var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
             var message = new MailMessage();
-            message.From = new MailAddress("worker@trajkov.dev");
-            message.To.Add(new MailAddress("admin@trajkov.dev")); //replace with valid value
+            message.From = new MailAddress(config.From);
+            message.To.Add(new MailAddress(config.To));
             message.Subject = "Contact from website form";
             message.Body = string.Format(body, model.Name, model.Email, model.Message);
             message.IsBodyHtml = true;
+            message.Priority = MailPriority.High;
             using (var smtp = new SmtpClient())
             {
-                if (config.Value.DeliveryMethod == SmtpDeliveryMethod.SpecifiedPickupDirectory)
+                if (config.DeliveryMethod == SmtpDeliveryMethod.SpecifiedPickupDirectory)
                 {
-                    smtp.DeliveryMethod = config.Value.DeliveryMethod;
-                    smtp.PickupDirectoryLocation = config.Value.PickupDirectoryLocation;
+                    // testing mode
+                    smtp.DeliveryMethod = config.DeliveryMethod;
+                    smtp.PickupDirectoryLocation = config.PickupDirectoryLocation;
                 }
                 else
                 {
                     var credential = new NetworkCredential
                     {
-                        UserName = config.Value.From,  // replace with valid value
-                        Password = config.Value.Password  // replace with valid value
+                        UserName = config.From,
+                        Password = config.Password
                     };
                     smtp.Credentials = credential;
                     smtp.UseDefaultCredentials = false;
-                    smtp.Host = config.Value.Host;
-                    smtp.Port = config.Value.Port;
+                    smtp.Host = config.Host;
+                    smtp.Port = config.Port;
                     smtp.EnableSsl = false;
                 }
 
