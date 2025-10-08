@@ -85,6 +85,14 @@ $(document).ready(function () {
             }
 		});
 	})
+
+	var allExperiencesVisible = false;
+	$('.show-more-experiences span').click(function () {
+		allExperiencesVisible = !allExperiencesVisible;
+		$(".more-experiences").toggle(allExperiencesVisible)
+		$(this).text(allExperiencesVisible ? "Show less" : "Show more");
+	})
+
 	function validate() {
 		var errors = [];
 		if (name.val() == '') {

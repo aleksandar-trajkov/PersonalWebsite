@@ -10,10 +10,10 @@
           From = new DateTime(2024, 10, 1),
           Responsibilities = new List<string>
           {
-              "Participation with sprint planning",
-              "Microservice architecture",
-              "Azure API Management",
-              "RabbitMQ",
+              "Distributed monolith architecture",
+              "RabbitMQ messaging system",
+              "gRPC",
+              "Domain Driven Design",
           }
         },
         new ExperienceModel
@@ -129,7 +129,7 @@
             }
         }
     };
-    for(var i = 0; i < experiences.Count; i++)
+    for (var i = 0; i < experiences.Count; i++)
     {
         experiences[i].Direction = i % 2 == 0 ? Direction.Left : Direction.Right;
     }
@@ -142,10 +142,17 @@
 <div class="clearfix"></div>
 <h3>Work experience</h3>
 <div class="timeline">
-<div class="timeline-line"></div>
-    @foreach(var experience in experiences)
+    <div class="timeline-line"></div>
+    @foreach (var experience in experiences.Take(4))
     {
         @await Html.PartialAsync("Partials/_SingleExperience", experience)
     }
+    <div class="more-experiences">
+        @foreach (var experience in experiences.Skip(4))
+        {
+            @await Html.PartialAsync("Partials/_SingleExperience", experience)
+        }
+    </div>
 </div>
+<div class="show-more-experiences"><span class="btn">Show more</span></div>
 <a class="btn cv-download-button float-right" href="~/files/CV-Europass-Latest-Trajkov-EN.pdf" target="_blank">Download CV</a>

@@ -1,7 +1,7 @@
 ﻿/// <binding BeforeBuild='build:css-sass-public' ProjectOpened='watch' />
 
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 
 gulp.task('build:css-sass-public', () => {
     return gulp.src('./Styles/*.scss')

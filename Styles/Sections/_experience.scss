@@ -31,7 +31,7 @@
         padding: .5rem 1rem;
         background: lighten(#141414, 10);
         position: relative;
-        margin-bottom:1rem;
+        margin-bottom: 1rem;
 
         .photo-frame {
             width: 40px;
@@ -52,7 +52,7 @@
 
     .timeline-title-text {
         line-height: 40px;
-        font-weight:bold;
+        font-weight: bold;
     }
 
     .timeline-position {
@@ -75,6 +75,10 @@
         top: 1rem;
     }
 
+    .more-experiences {
+        display: none;
+    }
+
     @media screen and (min-width:992px) {
         .timeline-line {
             left: calc(50% - 2px);
@@ -91,7 +95,7 @@
                 left: calc(5% - 30px);
 
                 .timeline-arrow {
-                    border-right:0;
+                    border-right: 0;
                     border-top: 12px solid transparent;
                     border-bottom: 12px solid transparent;
                     border-left: 12px solid lighten(#141414, 10);
@@ -109,6 +113,21 @@
                     left: -12px;
                 }
             }
+        }
+    }
+}
+
+.show-more-experiences {
+    text-align: center;
+
+    span {
+        display: inline-block;
+        padding: .5rem 1rem;
+        background: $yellow;
+        color:black;
+
+        &:hover, &:active {
+            background: darken($yellow, 10);
         }
     }
 }
